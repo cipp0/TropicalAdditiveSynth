@@ -1,30 +1,37 @@
 <Cabbage>
-form caption("Tropical Synth") size(600, 300), guiMode("queue"), pluginId("def1")
-keyboard bounds(0, 188, 600, 95)
-rslider bounds(14, 4, 60, 60) range(-1, 1, -1, 1, 0.001)channel("amp") text("Amp") 
-rslider bounds(74, 4, 60, 60) range(1, 4, 1, 1, 1)channel("table") text("Table")
-rslider bounds(134, 4, 60, 60) range(-1, 1, 0, 1, 0.001)channel("phase") text("Phase")
+form caption("Tropical Synth") size(550, 355), guiMode("queue"), pluginId("def1")
+keyboard bounds(0, 258, 550, 95)
+rslider bounds(2, 12, 60, 60) range(-1, 1, -1, 1, 0.001)channel("amp") text("Amp") textColour(255, 255, 255, 255)
+rslider bounds(4, 96, 60, 60) range(1, 4, 1, 1, 1)channel("table") text("Table") textColour(255, 255, 255, 255)
+rslider bounds(2, 178, 60, 60) range(-1, 1, 0, 1, 0.001)channel("phase") text("Phase") textColour(255, 255, 255, 255)
 
-rslider bounds(10, 86, 60, 60) range(-1, 1, 1, 1, 0.001)channel("amp2") text("Amp2") 
-rslider bounds(70, 86, 60, 60) range(1, 4, 1, 1, 1)channel("table2") text("Table2")
-rslider bounds(130, 86, 60, 60) range(-1, 1, 0, 1, 0.001)channel("phase2") text("Phase2")
-rslider bounds(190, 86, 60, 60) range(-12, 12, 0, 1, 0.001)channel("detune2") text("Detune2")
+rslider bounds(90, 14, 60, 60) range(-1, 1, 1, 1, 0.001)channel("amp2") text("Amp2")  textColour(255, 255, 255, 255)
+rslider bounds(150, 14, 60, 60) range(1, 4, 1, 1, 1)channel("table2") text("Table2") textColour(255, 255, 255, 255)
+rslider bounds(210, 14, 60, 60) range(-1, 1, 0, 1, 0.001)channel("phase2") text("Phase2") textColour(255, 255, 255, 255)
+rslider bounds(270, 14, 60, 60) range(-12, 12, 0, 1, 0.001)channel("detune2") text("Detune2") textColour(255, 255, 255, 255)
 
-rslider bounds(272, 4, 60, 60) range(-1, 1, 1, 1, 0.001)channel("amp3") text("Amp3") 
-rslider bounds(332, 4, 60, 60) range(1, 4, 1, 1, 1)channel("table3") text("Table3")
-rslider bounds(392, 4, 60, 60) range(-1, 1, 0, 1, 0.001)channel("phase3") text("Phase3")
-rslider bounds(452, 4, 60, 60) range(-12, 12, 0, 1, 0.001)channel("detune3") text("Detune3")
+rslider bounds(90, 94, 60, 60) range(-1, 1, 1, 1, 0.001)channel("amp3") text("Amp3") textColour(255, 255, 255, 255)
+rslider bounds(150, 94, 60, 60) range(1, 4, 1, 1, 1)channel("table3") text("Table3") textColour(255, 255, 255, 255)
+rslider bounds(210, 94, 60, 60) range(-1, 1, 0, 1, 0.001)channel("phase3") text("Phase3") textColour(255, 255, 255, 255)
+rslider bounds(270, 94, 60, 60) range(-12, 12, 0, 1, 0.001)channel("detune3") text("Detune3")textColour(255, 255, 255, 255)
 
-rslider bounds(274, 86, 60, 60) range(-1, 1, 1, 1, 0.001)channel("amp4") text("Amp4") 
-rslider bounds(334, 86, 60, 60) range(1, 4, 1, 1, 1)channel("table4") text("Table4")
-rslider bounds(394, 86, 60, 60) range(-1, 1, 0, 1, 0.001)channel("phase4") text("Phase4")
-rslider bounds(454, 86, 60, 60) range(-12, 12, 0, 1, 0.001)channel("detune4") text("Detune4")
+rslider bounds(88, 172, 60, 60) range(-1, 1, 1, 1, 0.001)channel("amp4") text("Amp4") textColour(255, 255, 255, 255)
+rslider bounds(148, 172, 60, 60) range(1, 4, 1, 1, 1)channel("table4") text("Table4")textColour(255, 255, 255, 255)
+rslider bounds(208, 172, 60, 60) range(-1, 1, 0, 1, 0.001)channel("phase4") text("Phase4")textColour(255, 255, 255, 255)
+rslider bounds(268, 172, 60, 60) range(-12, 12, 0, 1, 0.001)channel("detune4") text("Detune4")textColour(255, 255, 255, 255)
 
 
-vslider bounds(522, 4, 70, 150) channel("mainvol") range(0, 1, 0.75, 1, 0.001) text("Main Volume")
-nslider bounds(12, 152, 100, 22) channel("freqmulti2") range(0, 12, 0, 1, 0.25)
-nslider bounds(272, 62, 100, 22) channel("freqmulti3") range(0, 12, 0, 1, 0.25)
-nslider bounds(272, 150, 100, 22) channel("freqmulti4") range(0, 12, 0, 1, 0.25)
+vslider bounds(450, 2, 70, 236) channel("mainvol") range(0, 1, 0.75, 1, 0.001) text("Main Volume")textColour(255, 255, 255, 255)
+
+nslider bounds(336, 40, 102, 24) channel("freqmulti2") range(0, 12, 0, 1, 0.25)
+label bounds(334, 194, 108, 14) channel("label10019") colour(255, 255, 255, 0) text("Freq multiplier") fontColour(255, 255, 255, 255)
+
+nslider bounds(336, 120, 102, 24) channel("freqmulti3") range(0, 12, 0, 1, 0.25)
+label bounds(334, 106, 108, 14) channel("label10029") colour(255, 255, 255, 0) text("Freq multiplier") fontColour(255, 255, 255, 255)
+
+nslider bounds(336, 208, 102, 24) channel("freqmulti4") range(0, 12, 0, 1, 0.25)
+label bounds(336, 26, 108, 14) channel("label100319") colour(255, 255, 255, 0) text("Freq multiplier") fontColour(255, 255, 255, 255)
+
 </Cabbage>
 <CsoundSynthesizer>
 <CsOptions>
