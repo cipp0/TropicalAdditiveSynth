@@ -5,7 +5,7 @@
 <CsInstruments>
 
 sr = 44100
-ksmps = 32
+ksmps = 256
 nchnls = 2
 0dbfs = 1
 
@@ -29,7 +29,6 @@ gkPhase1 port gkPhase1, 0.02
 
 gkFreq1 invalue "freq"
 gkFreq1 port gkFreq1, 0.02
-
 
 
 
@@ -80,6 +79,9 @@ gkfreqmulti4 port gkfreqmulti4, 0.02
 gkDetune4 invalue "detune4"
 gkDetune4 port gkDetune4, 0.02
 
+kMainVol invalue "mainvol"
+kMainVol port kMainVol, 0.02
+
 aosc1 osciliktp  gkFreq1, gkTable1, gkPhase1
 
 aosc2 osciliktp  (gkFreq1*gkfreqmulti2)+gkDetune2, gkTable2, gkPhase2
@@ -100,7 +102,7 @@ amin2 min amin1, (aosc4+gkAmp4)
 
 amin2 dcblock2 amin2 ;[, iorder] [, iskip]
 
-outs amin2, amin2
+outs amin2*kMainVol, amin2*kMainVol
 endin
 </CsInstruments>
 <CsScore>
@@ -111,8 +113,8 @@ i1 0 [3600*24*7]
  <label>Widgets</label>
  <objectName/>
  <x>100</x>
- <y>122</y>
- <width>320</width>
+ <y>144</y>
+ <width>1114</width>
  <height>240</height>
  <visible>true</visible>
  <uuid/>
@@ -121,7 +123,7 @@ i1 0 [3600*24*7]
   <g>255</g>
   <b>255</b>
  </bgcolor>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>3</x>
   <y>5</y>
@@ -152,7 +154,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>1</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>amp</objectName>
   <x>20</x>
   <y>80</y>
@@ -171,7 +173,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>phase</objectName>
   <x>50</x>
   <y>80</y>
@@ -190,7 +192,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBSpinBox">
+ <bsbObject type="BSBSpinBox" version="2">
   <objectName>table</objectName>
   <x>85</x>
   <y>115</y>
@@ -220,7 +222,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <value>1</value>
  </bsbObject>
- <bsbObject version="2" type="BSBHSlider">
+ <bsbObject type="BSBHSlider" version="2">
   <objectName>freq</objectName>
   <x>50</x>
   <y>220</y>
@@ -239,7 +241,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBScope">
+ <bsbObject type="BSBScope" version="2">
   <objectName/>
   <x>830</x>
   <y>65</y>
@@ -258,7 +260,7 @@ i1 0 [3600*24*7]
   <dispy>1.00000000</dispy>
   <mode>0.00000000</mode>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>85</x>
   <y>60</y>
@@ -289,7 +291,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>15</x>
   <y>60</y>
@@ -320,7 +322,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>amp</objectName>
   <x>10</x>
   <y>180</y>
@@ -354,7 +356,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>45</x>
   <y>60</y>
@@ -385,7 +387,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>phase</objectName>
   <x>45</x>
   <y>180</y>
@@ -419,7 +421,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>85</x>
   <y>95</y>
@@ -450,7 +452,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>85</x>
   <y>140</y>
@@ -484,7 +486,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>amp2</objectName>
   <x>185</x>
   <y>80</y>
@@ -497,13 +499,13 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>1.00000000</value>
+  <value>-0.28000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>phase2</objectName>
   <x>215</x>
   <y>80</y>
@@ -522,7 +524,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBSpinBox">
+ <bsbObject type="BSBSpinBox" version="2">
   <objectName>table2</objectName>
   <x>285</x>
   <y>120</y>
@@ -552,7 +554,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <value>1</value>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>285</x>
   <y>65</y>
@@ -583,7 +585,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>180</x>
   <y>60</y>
@@ -614,7 +616,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>amp2</objectName>
   <x>175</x>
   <y>180</y>
@@ -638,7 +640,7 @@ i1 0 [3600*24*7]
    <g>255</g>
    <b>255</b>
   </bgcolor>
-  <value>1.00000000</value>
+  <value>-0.28000000</value>
   <resolution>0.00100000</resolution>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
@@ -648,7 +650,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>210</x>
   <y>60</y>
@@ -679,7 +681,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>phase2</objectName>
   <x>210</x>
   <y>180</y>
@@ -713,7 +715,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>285</x>
   <y>100</y>
@@ -744,7 +746,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>285</x>
   <y>145</y>
@@ -778,7 +780,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>amp3</objectName>
   <x>400</x>
   <y>85</y>
@@ -791,13 +793,13 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>1.00000000</value>
+  <value>-0.92000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>phase3</objectName>
   <x>430</x>
   <y>85</y>
@@ -816,7 +818,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>510</x>
   <y>65</y>
@@ -847,7 +849,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>395</x>
   <y>65</y>
@@ -878,7 +880,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>amp3</objectName>
   <x>390</x>
   <y>185</y>
@@ -902,7 +904,7 @@ i1 0 [3600*24*7]
    <g>255</g>
    <b>255</b>
   </bgcolor>
-  <value>1.00000000</value>
+  <value>-0.92000000</value>
   <resolution>0.00100000</resolution>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
@@ -912,7 +914,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>425</x>
   <y>65</y>
@@ -943,7 +945,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>phase3</objectName>
   <x>425</x>
   <y>185</y>
@@ -977,7 +979,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>510</x>
   <y>145</y>
@@ -1011,7 +1013,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>amp4</objectName>
   <x>620</x>
   <y>85</y>
@@ -1024,13 +1026,13 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>1.00000000</value>
+  <value>-0.10000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>phase4</objectName>
   <x>650</x>
   <y>85</y>
@@ -1049,7 +1051,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>730</x>
   <y>65</y>
@@ -1080,7 +1082,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>615</x>
   <y>65</y>
@@ -1111,7 +1113,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>amp4</objectName>
   <x>610</x>
   <y>185</y>
@@ -1135,7 +1137,7 @@ i1 0 [3600*24*7]
    <g>255</g>
    <b>255</b>
   </bgcolor>
-  <value>1.00000000</value>
+  <value>-0.10000000</value>
   <resolution>0.00100000</resolution>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
@@ -1145,7 +1147,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>645</x>
   <y>65</y>
@@ -1176,7 +1178,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>phase4</objectName>
   <x>645</x>
   <y>185</y>
@@ -1210,7 +1212,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>730</x>
   <y>145</y>
@@ -1244,7 +1246,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>freq</objectName>
   <x>760</x>
   <y>215</y>
@@ -1278,7 +1280,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>10</x>
   <y>215</y>
@@ -1309,7 +1311,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBSpinBox">
+ <bsbObject type="BSBSpinBox" version="2">
   <objectName>freqmulti2</objectName>
   <x>330</x>
   <y>120</y>
@@ -1339,7 +1341,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <value>2</value>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>330</x>
   <y>100</y>
@@ -1370,7 +1372,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBSpinBox">
+ <bsbObject type="BSBSpinBox" version="2">
   <objectName>table3</objectName>
   <x>510</x>
   <y>115</y>
@@ -1400,7 +1402,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <value>3</value>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>510</x>
   <y>95</y>
@@ -1431,7 +1433,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBSpinBox">
+ <bsbObject type="BSBSpinBox" version="2">
   <objectName>freqmulti3</objectName>
   <x>555</x>
   <y>115</y>
@@ -1461,7 +1463,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <value>0.5</value>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>555</x>
   <y>95</y>
@@ -1492,7 +1494,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBSpinBox">
+ <bsbObject type="BSBSpinBox" version="2">
   <objectName>table4</objectName>
   <x>730</x>
   <y>115</y>
@@ -1522,7 +1524,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <value>4</value>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>730</x>
   <y>95</y>
@@ -1553,7 +1555,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBSpinBox">
+ <bsbObject type="BSBSpinBox" version="2">
   <objectName>freqmulti4</objectName>
   <x>775</x>
   <y>110</y>
@@ -1583,7 +1585,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <value>1.75</value>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>775</x>
   <y>90</y>
@@ -1614,7 +1616,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>detune4</objectName>
   <x>690</x>
   <y>85</y>
@@ -1633,7 +1635,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>685</x>
   <y>65</y>
@@ -1664,7 +1666,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>detune4</objectName>
   <x>680</x>
   <y>185</y>
@@ -1698,7 +1700,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>detune3</objectName>
   <x>470</x>
   <y>85</y>
@@ -1717,7 +1719,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>465</x>
   <y>65</y>
@@ -1748,7 +1750,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>detune3</objectName>
   <x>460</x>
   <y>185</y>
@@ -1782,7 +1784,7 @@ i1 0 [3600*24*7]
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
  </bsbObject>
- <bsbObject version="2" type="BSBVSlider">
+ <bsbObject type="BSBVSlider" version="2">
   <objectName>detune2</objectName>
   <x>255</x>
   <y>80</y>
@@ -1801,7 +1803,7 @@ i1 0 [3600*24*7]
   <resolution>-1.00000000</resolution>
   <randomizable group="0">false</randomizable>
  </bsbObject>
- <bsbObject version="2" type="BSBLabel">
+ <bsbObject type="BSBLabel" version="2">
   <objectName/>
   <x>245</x>
   <y>60</y>
@@ -1832,7 +1834,7 @@ i1 0 [3600*24*7]
   <borderradius>1</borderradius>
   <borderwidth>0</borderwidth>
  </bsbObject>
- <bsbObject version="2" type="BSBScrollNumber">
+ <bsbObject type="BSBScrollNumber" version="2">
   <objectName>detune2</objectName>
   <x>245</x>
   <y>180</y>
@@ -1865,6 +1867,56 @@ i1 0 [3600*24*7]
   <borderwidth>0</borderwidth>
   <randomizable group="0">false</randomizable>
   <mouseControl act=""/>
+ </bsbObject>
+ <bsbObject type="BSBHSlider" version="2">
+  <objectName>mainvol</objectName>
+  <x>428</x>
+  <y>17</y>
+  <width>371</width>
+  <height>22</height>
+  <uuid>{cfd96e89-dfbc-4ffa-b947-ab590fd84f06}</uuid>
+  <visible>true</visible>
+  <midichan>0</midichan>
+  <midicc>0</midicc>
+  <description/>
+  <minimum>0.00000000</minimum>
+  <maximum>1.00000000</maximum>
+  <value>0.58490566</value>
+  <mode>lin</mode>
+  <mouseControl act="jump">continuous</mouseControl>
+  <resolution>-1.00000000</resolution>
+  <randomizable group="0">false</randomizable>
+ </bsbObject>
+ <bsbObject type="BSBLabel" version="2">
+  <objectName/>
+  <x>358</x>
+  <y>18</y>
+  <width>72</width>
+  <height>20</height>
+  <uuid>{9cd80131-845c-4d4f-beb7-f3d797025782}</uuid>
+  <visible>true</visible>
+  <midichan>0</midichan>
+  <midicc>-3</midicc>
+  <description/>
+  <label>Main Volume</label>
+  <alignment>left</alignment>
+  <valignment>top</valignment>
+  <font>Arial</font>
+  <fontsize>10</fontsize>
+  <precision>3</precision>
+  <color>
+   <r>0</r>
+   <g>0</g>
+   <b>0</b>
+  </color>
+  <bgcolor mode="nobackground">
+   <r>255</r>
+   <g>255</g>
+   <b>255</b>
+  </bgcolor>
+  <bordermode>false</bordermode>
+  <borderradius>1</borderradius>
+  <borderwidth>0</borderwidth>
  </bsbObject>
 </bsbPanel>
 <bsbPresets>
