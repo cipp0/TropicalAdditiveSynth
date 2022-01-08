@@ -20,5 +20,5 @@ In this CSoundQT example the user can change many parameters:
 - Phase
 
 
-#Cabbage Version for VST dev
+# Cabbage Version for VST dev
 ![plot](/tropicabbage.png)
