@@ -18,3 +18,7 @@ In this CSoundQT example the user can change many parameters:
 - Detune
 - Amplitude
 - Phase
+
+
+#Cabbage Version for VST dev
+![plot](/tropicabbage.png)
