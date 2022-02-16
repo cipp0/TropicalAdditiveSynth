@@ -15,8 +15,6 @@ giSaw ftgen 3, 0,2^16+1, 7, 0., 0, 1., 2^16+1, -1., 0, 0. ;saw
 giSquare ftgen 4,0,2^16+1, 7, 0., 0, 1., 32768, 1., 0, -1., 32768, -1., 0, 0. ;square
 
 
-
-;instrument will be triggered by keyboard widget
 instr 1
 gkAmp1 invalue "amp"
 gkAmp1 port gkAmp1, 0.02
@@ -186,7 +184,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>0.72000000</value>
+  <value>-1.00000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -235,7 +233,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>30.00000000</minimum>
   <maximum>440.00000000</maximum>
-  <value>220.00000000</value>
+  <value>165.50847458</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -499,7 +497,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>-0.28000000</value>
+  <value>1.00000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -518,7 +516,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>0.36000000</value>
+  <value>1.00000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -640,7 +638,7 @@ i1 0 [3600*24*7]
    <g>255</g>
    <b>255</b>
   </bgcolor>
-  <value>-0.28000000</value>
+  <value>1.00000000</value>
   <resolution>0.00100000</resolution>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
@@ -793,7 +791,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>-0.92000000</value>
+  <value>1.00000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -812,7 +810,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>0.86000000</value>
+  <value>-0.46000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -904,7 +902,7 @@ i1 0 [3600*24*7]
    <g>255</g>
    <b>255</b>
   </bgcolor>
-  <value>-0.92000000</value>
+  <value>1.00000000</value>
   <resolution>0.00100000</resolution>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
@@ -1026,7 +1024,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>-0.10000000</value>
+  <value>1.00000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -1045,7 +1043,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>-0.50000000</value>
+  <value>0.76000000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -1137,7 +1135,7 @@ i1 0 [3600*24*7]
    <g>255</g>
    <b>255</b>
   </bgcolor>
-  <value>-0.10000000</value>
+  <value>1.00000000</value>
   <resolution>0.00100000</resolution>
   <minimum>-1.00000000</minimum>
   <maximum>1.00000000</maximum>
@@ -1400,7 +1398,7 @@ i1 0 [3600*24*7]
   <minimum>1</minimum>
   <maximum>4</maximum>
   <randomizable group="0">false</randomizable>
-  <value>3</value>
+  <value>1</value>
  </bsbObject>
  <bsbObject type="BSBLabel" version="2">
   <objectName/>
@@ -1629,7 +1627,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-12.00000000</minimum>
   <maximum>12.00000000</maximum>
-  <value>-4.00000000</value>
+  <value>0.45400000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -1713,7 +1711,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-12.00000000</minimum>
   <maximum>12.00000000</maximum>
-  <value>0.00000000</value>
+  <value>0.08100000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -1797,7 +1795,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>-12.00000000</minimum>
   <maximum>12.00000000</maximum>
-  <value>0.00000000</value>
+  <value>-0.26100000</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
@@ -1881,7 +1879,7 @@ i1 0 [3600*24*7]
   <description/>
   <minimum>0.00000000</minimum>
   <maximum>1.00000000</maximum>
-  <value>0.58490566</value>
+  <value>0.44743935</value>
   <mode>lin</mode>
   <mouseControl act="jump">continuous</mouseControl>
   <resolution>-1.00000000</resolution>
